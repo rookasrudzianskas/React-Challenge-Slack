@@ -11,7 +11,7 @@ const Sidebar = () => {
             <WorkspaceContainer>
                 <Name>Rookas Channel</Name>
                 <NewMessage>
-
+                    <AddCircleOutlineIcon />
                 </NewMessage>
             </WorkspaceContainer>
         </Container>
@@ -22,10 +22,20 @@ export default Sidebar;
 
 const Container = styled.div`
   background-color: #3f0e40;
+  
 `;
 
 const WorkspaceContainer = styled.div`
-
+  color: white;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding-left: 19px;
+  justify-content: space-between;
+  border-bottom: 1px solid #532753;
+  cursor: pointer;
+  
+  
 `;
 
 const Name = styled.div`
@@ -33,6 +43,16 @@ const Name = styled.div`
 `;
 
 const NewMessage = styled.div`
-
+  width: 36px;
+  height: 36px;
+  background: white;
+  color: #3F0E40;
+  fill: #3F0E40;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 20px;
 `;
 
