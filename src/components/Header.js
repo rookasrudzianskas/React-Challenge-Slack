@@ -36,13 +36,16 @@ const Container = styled.div`
   color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   position: relative;
   box-shadow: 0 1px 0 0 rgb(255 255 255 / 10%);
 `;
 
 const Main = styled.div`
   display: flex;
+  margin-right: 16px;
+  margin-right: 16px;
+  
 `;
 
 
@@ -50,13 +53,15 @@ const UserContainer = styled.div`
   display: flex;
   align-items: center;
   padding-right: 16px;
+  position: absolute;
+  right: 0;
   
 `;
 
 const SearchContainer = styled.div`
   min-width: 400px;
-  
-  
+  margin-left: 16px;
+  margin-right: 16px;
 `;
 
 const Search = styled.div`
@@ -71,6 +76,7 @@ const Search = styled.div`
     border: none;
     color: white;
     padding: 4px 8px;
+    width: 100%;
 
   }
   
