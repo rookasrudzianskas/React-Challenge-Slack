@@ -52,11 +52,25 @@ const UserContainer = styled.div`
 `;
 
 const SearchContainer = styled.div`
-
+  min-width: 400px;
+  
+  
 `;
 
 const Search = styled.div`
+  box-shadow: inset 0 0 0 1px rgb(104 74 104);
+  width: 100%;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
 
+  input {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 4px 8px;
+
+  }
 `;
 
 const Name = styled.div`
