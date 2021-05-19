@@ -49,6 +49,8 @@ const Main = styled.div`
 const UserContainer = styled.div`
   display: flex;
   align-items: center;
+  padding-right: 16px;
+  
 `;
 
 const SearchContainer = styled.div`
@@ -71,10 +73,15 @@ const Search = styled.div`
     padding: 4px 8px;
 
   }
+  
+  input:focus {
+    outline: none;
+  }
 `;
 
 const Name = styled.div`
-
+  padding-right: 16px;
+  
 `;
 
 const UserImage = styled.div`
