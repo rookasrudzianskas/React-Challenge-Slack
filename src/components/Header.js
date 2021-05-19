@@ -18,7 +18,13 @@ const Header = () => {
             </Main>
 
             <UserContainer>
+                <Name>
+                    Rokas
+                </Name>
 
+                <UserImage>
+                    <img src="https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg" alt=""/>
+                </UserImage>
             </UserContainer>
         </Container>
     );
@@ -26,16 +32,23 @@ const Header = () => {
 
 export default Header;
 const Container = styled.div`
-  
+  background-color: #350d36;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  //position: relative;
+  //box-shadow: 0 1px 0 0 rgb(255 255 255 / 10%);
 `;
 
 const Main = styled.div`
-
+  display: flex;
 `;
 
 
 const UserContainer = styled.div`
-
+  display: flex;
+  align-items: center;
 `;
 
 const SearchContainer = styled.div`
@@ -43,5 +56,13 @@ const SearchContainer = styled.div`
 `;
 
 const Search = styled.div`
+
+`;
+
+const Name = styled.div`
+
+`;
+
+const UserImage = styled.div`
 
 `;
