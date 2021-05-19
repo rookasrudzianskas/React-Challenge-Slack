@@ -37,8 +37,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  //position: relative;
-  //box-shadow: 0 1px 0 0 rgb(255 255 255 / 10%);
+  position: relative;
+  box-shadow: 0 1px 0 0 rgb(255 255 255 / 10%);
 `;
 
 const Main = styled.div`
@@ -64,5 +64,12 @@ const Name = styled.div`
 `;
 
 const UserImage = styled.div`
-
+  width: 28px;
+  height: 28px;
+  border: 2px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+  img {
+    width: 100%;
+  }
 `;
