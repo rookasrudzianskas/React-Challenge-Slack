@@ -14,6 +14,13 @@ const Sidebar = () => {
                     <AddCircleOutlineIcon />
                 </NewMessage>
             </WorkspaceContainer>
+
+            <MainChannels>
+                <MainChannelItem>
+                    <AddCircleOutlineIcon />
+                    Add
+                </MainChannelItem>
+            </MainChannels>
         </Container>
     );
 };
@@ -55,4 +62,19 @@ const NewMessage = styled.div`
   cursor: pointer;
   margin-right: 20px;
 `;
+
+const MainChannels = styled.div`
+  
+`;
+
+const MainChannelItem = styled.div`
+  color: rgb(188, 171, 188);
+  display: grid;
+  grid-template-columns: 15% auto;
+  height: 28px;
+  align-items: center;
+  padding-left: 19px;
+  cursor: pointer;
+`;
+
 
