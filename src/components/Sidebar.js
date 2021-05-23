@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import AddIcon from '@material-ui/icons/Add';
 import { useHistory } from 'react-router-dom'
-
+import {sidebarItems} from "../data/SidebarData";
 
 const Sidebar = () => {
     return (
