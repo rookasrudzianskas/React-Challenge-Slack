@@ -5,10 +5,18 @@ import AddIcon from '@material-ui/icons/Add';
 import { useHistory } from 'react-router-dom'
 
 import {sidebarItems} from "../data/SidebarData";
+import db from "../firebase";
 
 const Sidebar = (props) => {
 
-
+    const addChannel = () => {
+        const promptName = prompt("Enter the channel name in here...");
+        if(promptName) {
+            db.collection('rooms').add({
+                name: promptName,
+            })
+        }
+    }
 
 
     return (
@@ -16,7 +24,7 @@ const Sidebar = (props) => {
             <WorkspaceContainer>
                 <Name>Rookas Channel</Name>
                 <NewMessage>
-                    <AddCircleOutlineIcon />
+                    <AddCircleOutlineIcon onClick={addChannel} />
                 </NewMessage>
             </WorkspaceContainer>
 
@@ -36,7 +44,7 @@ const Sidebar = (props) => {
                     <div>
                         Channels
                     </div>
-                    <AddIcon />
+                    <AddIcon  onClick={addChannel} style={{cursor: 'pointer'}} />
                 </NewChannelContainer>
                 <ChannelsList>
                     {props.rooms.map((item, index) => (
