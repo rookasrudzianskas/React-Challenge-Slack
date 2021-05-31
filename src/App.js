@@ -10,6 +10,7 @@ import {useEffect, useState} from "react";
 function App() {
 
     const [rooms, setRooms] = useState([]);
+    const [user, setUser] = useState(null);
 
     const getChannels = () => {
         db.collection('rooms').onSnapshot(snapshot => {
@@ -27,6 +28,7 @@ function App() {
   return (
     <div className="app">
         <Router>
+            {!user ? (<Login />) : (
             <Container>
                 <Header />
                 <Main>
@@ -42,6 +44,7 @@ function App() {
                     </Switch>
                 </Main>
             </Container>
+            )}
         </Router>
     </div>
   );

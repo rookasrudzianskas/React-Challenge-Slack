@@ -4,6 +4,7 @@ import styled from "styled-components";
 import AddIcon from '@material-ui/icons/Add';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import ChatInput from "./ChatInput";
+import ChatMessage from "./ChatMessage";
 
 const Chat = () => {
     return (
@@ -27,7 +28,7 @@ const Chat = () => {
             </Header>
 
             <MessageContainer>
-
+                <ChatMessage />
             </MessageContainer>
 
             <ChatInput />
