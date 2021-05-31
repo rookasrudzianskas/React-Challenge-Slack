@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom'
 
 import {sidebarItems} from "../data/SidebarData";
 
-const Sidebar = () => {
+const Sidebar = (props) => {
 
 
 
@@ -39,17 +39,11 @@ const Sidebar = () => {
                     <AddIcon />
                 </NewChannelContainer>
                 <ChannelsList>
-                    <Channel>
-                   Something
-                    </Channel>
-
-                    <Channel>
-                        Something
-                    </Channel>
-
-                    <Channel>
-                        Something
-                    </Channel>
+                    {props.rooms.map((item, index) => (
+                        <Channel key={index}>
+                            {item.name}
+                        </Channel>
+                    ))}
                 </ChannelsList>
             </ChannelsContainer>
         </Container>
