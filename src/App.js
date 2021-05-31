@@ -37,7 +37,7 @@ function App() {
                         </Route>
 
                         <Route route="/">
-                            <Login />
+                            <Chat />
                         </Route>
                     </Switch>
                 </Main>
