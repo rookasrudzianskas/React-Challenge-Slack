@@ -16,6 +16,8 @@ const Login = (props) => {
 
             // then we login, we pass the new user, and then we back to the app js we set the user from here to the state in app js
             props.setUser(newUser);
+            // we add the user to the local storage
+            localStorage.setItem('user', JSON.stringify(newUser));
         }).catch((error) => {
             alert(error.message);
         })

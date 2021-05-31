@@ -5,21 +5,29 @@ import Login from "./components/Login";
 import styled from "styled-components";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
-import db, {auth} from "./firebase";
+import db, {auth, provider} from "./firebase";
 import {useEffect, useState} from "react";
 import {useAuthState} from "react-firebase-hooks/auth";
 function App() {
 
     const [rooms, setRooms] = useState([]);
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
+    console.log("THIS IS LOCAL STORAGE", user);
     // const [user] = useAuthState(auth);
-    console.log(user)
 
     const getChannels = () => {
         db.collection('rooms').onSnapshot(snapshot => {
             setRooms(snapshot.docs.map((doc) => {
                 return {id: doc.id, name: doc.data().name}
             }))
+        })
+    }
+
+    const signOut = () => {
+        auth.signOut().then(() => {
+            // forthe local storage
+            setUser(null);
+            localStorage.removeItem('user')
         })
     }
 
@@ -33,12 +41,12 @@ function App() {
         <Router>
             {!user ? (<Login setUser={setUser} />) : (
             <Container>
-                <Header />
+                <Header signOut={signOut} user={user} />
                 <Main>
                     <Sidebar rooms={rooms} />
                     <Switch>
                         <Route path="/room">
-                            <Chat />
+                            <Chat user={user}  />
                         </Route>
                     </Switch>
                 </Main>
