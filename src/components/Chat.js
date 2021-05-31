@@ -3,6 +3,7 @@ import "./styles/Chat.css";
 import styled from "styled-components";
 import AddIcon from '@material-ui/icons/Add';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import ChatInput from "./ChatInput";
 
 const Chat = () => {
     return (
@@ -29,9 +30,7 @@ const Chat = () => {
 
             </MessageContainer>
 
-            <ChatInput>
-
-            </ChatInput>
+            <ChatInput />
         </Container>
 
     );
@@ -80,10 +79,6 @@ const Header = styled.div`
 `
 
 const MessageContainer = styled.div`
-  
-`
-
-const ChatInput = styled.div`
   
 `
 
