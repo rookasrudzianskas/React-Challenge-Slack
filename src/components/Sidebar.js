@@ -18,8 +18,8 @@ const Sidebar = () => {
 
             <MainChannels>
                 {
-                    sidebarItems.map(item => (
-                        <MainChannelItem>
+                    sidebarItems.map((item, index) => (
+                        <MainChannelItem key={index}>
                             {item.icon}
                             {item.text}
                         </MainChannelItem>
