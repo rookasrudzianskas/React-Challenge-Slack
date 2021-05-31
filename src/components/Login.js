@@ -1,13 +1,33 @@
 import React from 'react';
 import "./styles/Login.css";
 import styled from "styled-components";
-const Login = () => {
+import {auth, provider} from "../firebase";
+import {useHistory} from "react-router-dom";
+
+
+const Login = (props) => {
+    const signIn = () => {
+        console.log("CLICKED")
+        auth.signInWithPopup(provider).then(result => {
+            const newUser = {
+                name: result.user.displayName,
+                photo: result.user.photoURL,
+            }
+
+            // then we login, we pass the new user, and then we back to the app js we set the user from here to the state in app js
+            props.setUser(newUser);
+        }).catch((error) => {
+            alert(error.message);
+        })
+    }
+
+
     return (
         <Container>
             <Content>
                 <SlackImg src="https://cdn.mos.cms.futurecdn.net/SDDw7CnuoUGax6x9mTo7dd.jpg" />
                 <h1>Sign in to Slack</h1>
-                <SignInButton>
+                <SignInButton onClick={signIn}>
                     Sign In with Google
                 </SignInButton>
             </Content>
