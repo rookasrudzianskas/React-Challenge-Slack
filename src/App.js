@@ -12,7 +12,7 @@ function App() {
 
     const [rooms, setRooms] = useState([]);
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
-    console.log("THIS IS LOCAL STORAGE", user);
+    // console.log("THIS IS LOCAL STORAGE", user);
     // const [user] = useAuthState(auth);
 
     const getChannels = () => {
@@ -45,8 +45,12 @@ function App() {
                 <Main>
                     <Sidebar rooms={rooms} />
                     <Switch>
-                        <Route path="/room">
+                        <Route path="/room/:channelId">
                             <Chat user={user}  />
+                        </Route>
+
+                        <Route path="/">
+                            <h1>Select or create the channel 🚀</h1>
                         </Route>
                     </Switch>
                 </Main>

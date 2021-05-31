@@ -7,7 +7,6 @@ import {useHistory} from "react-router-dom";
 
 const Login = (props) => {
     const signIn = () => {
-        console.log("CLICKED")
         auth.signInWithPopup(provider).then(result => {
             const newUser = {
                 name: result.user.displayName,

@@ -9,6 +9,14 @@ import db from "../firebase";
 
 const Sidebar = (props) => {
 
+    const history = useHistory();
+
+    const goToChannel = (id) => {
+        if(id) {
+            history.push(`/room/${id}`)
+        }
+    }
+
     const addChannel = () => {
         const promptName = prompt("Enter the channel name in here...");
         if(promptName) {
@@ -48,8 +56,8 @@ const Sidebar = (props) => {
                 </NewChannelContainer>
                 <ChannelsList>
                     {props.rooms.map((item, index) => (
-                        <Channel key={index}>
-                            {item.name}
+                        <Channel onClick={() => goToChannel(item.id)} key={index}>
+                            # {item.name}
                         </Channel>
                     ))}
                 </ChannelsList>

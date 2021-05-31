@@ -1,18 +1,34 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "./styles/Chat.css";
 import styled from "styled-components";
 import AddIcon from '@material-ui/icons/Add';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import ChatInput from "./ChatInput";
 import ChatMessage from "./ChatMessage";
+import db from "../firebase";
+import {useParams} from "react-router-dom";
 
 const Chat = () => {
+    let { channelId } = useParams();
+    const [channel, setChannel] = useState();
+
+    const getChannel = () => {
+
+        db.collection('rooms').doc(channelId).onSnapshot(snapshot => {
+            setChannel(snapshot.data().name);
+        })
+    }
+
+    useEffect(() => {
+        getChannel();
+    }, [channelId]);
+
     return (
         <Container>
             <Header>
                 <Channel>
                     <ChannelName>
-                        #rookas
+                        #{channel.data().name}
                     </ChannelName>
                     <ChannelInfo>
                         This is the main channel
