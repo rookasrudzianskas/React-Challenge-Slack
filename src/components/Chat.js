@@ -10,25 +10,27 @@ import {useParams} from "react-router-dom";
 
 const Chat = () => {
     let { channelId } = useParams();
-    const [channel, setChannel] = useState();
+    const [channel, setChannel] = useState([]);
 
     const getChannel = () => {
 
         db.collection('rooms').doc(channelId).onSnapshot(snapshot => {
-            setChannel(snapshot.data().name);
+            setChannel(snapshot.data());
         })
     }
 
     useEffect(() => {
         getChannel();
     }, [channelId]);
+    console.log("🚀", channel)
+
 
     return (
         <Container>
             <Header>
                 <Channel>
                     <ChannelName>
-                        #{channel.data().name}
+                        #{channel.name}
                     </ChannelName>
                     <ChannelInfo>
                         This is the main channel
