@@ -1,19 +1,22 @@
 import React from 'react';
 import styled from "styled-components";
 
-const ChatMessage = () => {
+const ChatMessage = ({text, name, image, timestamp}) => {
+    console.log(timestamp)
+    let time  =  new Date(timestamp.toDate()).toLocaleDateString()
     return (
         <Container>
             <UserAvatar>
-                <img src="https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK_400x400.jpg" alt=""/>
+                <img src={image} alt=""/>
             </UserAvatar>
             <MessageContent>
                 <Name>
-                    Rokas Rudzianskas
+                    {name ? name : "Guest in here"}
+                    <span>{time}</span>
                 </Name>
 
                 <Text>
-                    How is the best Challenge ever?
+                    {text}
                 </Text>
             </MessageContent>
         </Container>
